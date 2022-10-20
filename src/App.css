@@ -1,9 +1,13 @@
-.banner-txt{
+.banner-txt {
     background: -webkit-linear-gradient(90deg, #2A9428 0%, #89C22D 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.highlighted-color{
+.highlighted-color {
     background: linear-gradient(90deg, #228B22 0%, #89C01C 100%);
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
 }
