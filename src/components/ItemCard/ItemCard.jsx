@@ -5,7 +5,11 @@ import ButtonOutline from '../Button/ButtonOutline'
 const ItemCard = ({imgBg, img, quantity, name, price}) => {
   return (
     <div className='w-[100%] p-4 rounded-lg bg-[#FFFFFF] flex flex-col gap-4'>
-        <div className={`aspect-square bg-[${imgBg}] rounded-lg w-[100%] flex justify-center items-center`}>
+        <div
+        style={{
+            backgroundColor: imgBg
+        }}
+        className={`aspect-square  rounded-lg w-[100%] flex justify-center items-center`}>
             <img src={img} alt="Item" className='max-w-[100px] bg-transparent' />
         </div>
         <div className='description'>

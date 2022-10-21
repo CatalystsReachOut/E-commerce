@@ -374,7 +374,8 @@ const Home = () => {
       </section>
 
       {/* Products */}
-      <div className='px-5 sm:px-[60px] mt-10'>
+      <div className='p-12  bg-[#FAFAFA]'>
+        <div className="container px-6  mx-auto">
         <div className='text-4xl font-bold mt-4'>Our products</div>
         <div className='text-base text-[#433B39] text-lg mt-2 mb-4'>Explore through our range of cold pressed oils and get started with a healthy lifestyle today.</div>
         <div className="grid grid-cols-3 gap-5 ">
@@ -385,6 +386,7 @@ const Home = () => {
               </div>
             ))
           }
+        </div>
         </div>
       </div>
 
