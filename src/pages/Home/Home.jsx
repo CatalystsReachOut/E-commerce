@@ -388,7 +388,7 @@ const Home = () => {
 
       {/* <ItemCard/> */}
 
-      <div className=" bg-[#fff] py-12">
+      <div className=" bg-[#fff] p-12">
 
         <div className="container px-6 m-auto">
 
