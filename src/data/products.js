@@ -39,19 +39,19 @@ export const productsArray = [
         name:'Cold Pressed Coconut Oil',
         quantity:'250mL',
         price:'160.00',
-        bg:'#F3F6F8'
+        bg:'#f3f6f8'
     },
     {
         name:'Cold Pressed Coconut Oil',
         quantity:'500mL',
         price:'310.00',
-        bg:'#F3F6F8'
+        bg:'#f3f6f8'
     },
     {
         name:'Cold Pressed Coconut Oil',
         quantity:'1000mL',
         price:'600.00',
-        bg:'#F3F6F8'
+        bg:'#f3f6f8'
     },
     {
         name:'Cold Pressed Sesame Oil',
