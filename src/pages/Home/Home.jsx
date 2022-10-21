@@ -18,6 +18,7 @@ import Thermometer from "../../assets/images/Thermometer.svg"
 import ThumbsDown from "../../assets/images/ThumbsDown.svg"
 
 import Output from "../../assets/images/Group 6356.svg"
+import output2 from "../../assets/images/banner-img2.svg"
 
 
 import Hearbeat from "../../assets/images/Heartbeat.svg"
@@ -48,6 +49,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 
 import { useDisclosure } from '@chakra-ui/react'
+import { useRef } from 'react'
 
 const Home = () => {
 
@@ -59,14 +61,23 @@ const Home = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
+  //refs
+  const productRef = useRef()
+
+  //scroll to products
+  const scrollToProducts = () => {
+    productRef.current.scrollIntoView({behavior: "smooth"})
+  }
+
+
   return (
     <div className='Home'>
 
-      <Navbar onOpen={onOpen}/>
+      <Navbar onOpen={onOpen} scrollToProducts={scrollToProducts}/>
 
       <Checkout isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
 
-      <Banner />
+      <Banner scrollToProducts={scrollToProducts}/>
 
       {/* SECTION 1*/}
 
@@ -236,7 +247,7 @@ const Home = () => {
                 {/* <p className='text-[#555555]'>Degumming, Neutralization, Bleaching, Dewaxing, Deodorizing</p> */}
               </div>
 
-              <button className={`w-full p-4 text-lg px-6 font-medium tracking-wider text-white highlighted-color text-lg transition-colors duration-300 transform  rounded mt-6 lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500`}>
+              <button className={`w-full p-4 text-lg px-6 font-medium tracking-wider text-white highlighted-color text-lg transition-colors duration-300 transform  rounded mt-6 lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500`} onClick={scrollToProducts}>
                 See Available Options
               </button>
 
@@ -301,7 +312,8 @@ const Home = () => {
           <p className=' opacity-80 w-[40%]'>Same quantity of seeds on refining produce 50% more oil whereas
             on cold pressing, a lesser yield but 100% pure and chemical free oil is produced.</p>
 
-          <img className='w-[100%] my-12 m-auto' src={Output} alt="" />
+          <img className='w-[100%] sm:block hidden my-12 m-auto' src={Output} alt="" />
+          <img className='w-[100%] my-12 sm:hidden block m-auto' src={output2} alt="" />
         </div>
 
       </section>
@@ -374,7 +386,7 @@ const Home = () => {
       </section>
 
       {/* Products */}
-      <div className='p-12  bg-[#FAFAFA]'>
+      <div className='p-12  bg-[#FAFAFA]' ref={productRef}>
         <div className="container px-6  mx-auto">
         <div className='text-4xl font-bold mt-4'>Our products</div>
         <div className='text-base text-[#433B39] text-lg mt-2 mb-4'>Explore through our range of cold pressed oils and get started with a healthy lifestyle today.</div>
@@ -396,8 +408,8 @@ const Home = () => {
 
         <div className="container px-6 m-auto">
 
-          <Banner1 />
-          <Banner2/>
+          <Banner1 scrollToProducts={scrollToProducts}/>
+          <Banner2 scrollToProducts={scrollToProducts} onOpen={onOpen}/>
         </div>
 
       </div>

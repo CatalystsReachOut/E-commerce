@@ -2,7 +2,7 @@ import React from 'react'
 import img1 from "../../assets/images/bannerimg.png"
 import ButtonGradient from '../Button/ButtonGradient'
 
-const Banner = () => {
+const Banner = ({scrollToProducts}) => {
     return (
         <div>
             <header className="bg-[#F4F9F4] px-12 dark:bg-[#F4F9F4] min-h-screen flex flex-col justify-center">
@@ -16,7 +16,7 @@ const Banner = () => {
                                 <p className="mt-4 text-[#433B39] dark:text-[#433B39]">We press seeds in wooden machines to extract pure edible oil.
                                     It’s exactly like the olden times, just replaced animals with motors.</p>
                                 <div className="flex flex-col mt-8 space-y-3 lg:space-y-0 lg:flex-row">
-                                    <ButtonGradient title={"See products"}/>
+                                    <ButtonGradient onClick={scrollToProducts} title={"See products"}/>
                                 </div>
                             </div>
                         </div>
