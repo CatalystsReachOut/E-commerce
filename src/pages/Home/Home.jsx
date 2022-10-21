@@ -47,6 +47,8 @@ import item from './../../assets/images/item.png'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 
+import { useDisclosure } from '@chakra-ui/react'
+
 const Home = () => {
 
   const navigate = useNavigate()
@@ -55,12 +57,14 @@ const Home = () => {
     navigate(dir)
   }
 
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   return (
     <div className='Home'>
 
-      <Navbar/>
+      <Navbar onOpen={onOpen}/>
 
-      {/* <Checkout /> */}
+      <Checkout isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
 
       <Banner />
 
