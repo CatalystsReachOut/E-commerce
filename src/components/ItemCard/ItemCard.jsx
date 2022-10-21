@@ -1,5 +1,6 @@
 import React from 'react'
 import {BsBag} from 'react-icons/bs'
+import ButtonOutline from '../Button/ButtonOutline'
 
 const ItemCard = ({imgBg, img, quantity, name, price}) => {
   return (
@@ -22,9 +23,7 @@ const ItemCard = ({imgBg, img, quantity, name, price}) => {
             </div>
 
             <div>
-                <button className='border-2 border-[#228B22] bg-transparent text-[#228B22] text-base p-4 w-[100%] rounded-lg flex justify-center gap-2 items-center'>
-                    <BsBag/> Add to Bag
-                </button>
+                <ButtonOutline title={"Add to Bag"} icon={<BsBag/>}/>
             </div>
             
         </div>

@@ -1,11 +1,12 @@
 import React from 'react'
 import img1 from "../../assets/images/bannerimg.png"
+import ButtonGradient from '../Button/ButtonGradient'
 
 const Banner = () => {
     return (
         <div>
-            <header className="bg-[#F4F9F4] dark:bg-[#F4F9F4]">
-                <div className="container px-6 py-16 mx-auto">
+            <header className="bg-[#F4F9F4] dark:bg-[#F4F9F4] min-h-screen flex flex-col justify-center">
+                <div className="container px-6 py-16 mx-auto ">
                     <div className="items-center lg:flex">
                         <div className="w-full lg:w-1/2">
                             <div className="lg:max-w-lg">
@@ -15,9 +16,7 @@ const Banner = () => {
                                 <p className="mt-4 text-[#433B39] dark:text-[#433B39]">We press seeds in wooden machines to extract pure edible oil.
                                     It’s exactly like the olden times, just replaced animals with motors.</p>
                                 <div className="flex flex-col mt-8 space-y-3 lg:space-y-0 lg:flex-row">
-                                    <button className="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white highlighted-color uppercase transition-colors duration-300 transform  rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                        See products
-                                    </button>
+                                    <ButtonGradient title={"See products"}/>
                                 </div>
                             </div>
                         </div>
