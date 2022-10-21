@@ -7,7 +7,6 @@ import {
     ModalFooter,
     ModalBody,
     ModalCloseButton,
-    useDisclosure,
     Button,
 } from '@chakra-ui/react'
 import { BsBag } from 'react-icons/bs'
@@ -21,12 +20,11 @@ import img from './../../assets/images/item.png'
 import party from './../../assets/images/party.png'
 
 
-const Checkout = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+const Checkout = ({isOpen, onOpen, onClose}) => {
+    
     const [step, setStep] = useState(1)
     return (
         <>
-            <Button onClick={onOpen}>Checkout</Button>
 
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay className='opacity-50 bg-[#F4F9F4]' />
