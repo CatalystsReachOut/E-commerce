@@ -9,7 +9,7 @@ const Banner1 = ({className}) => {
         <div className="container flex justify-between items-center h-full">
             <div className=''>
                 <div className='text-[#FFFFFF] text-5xl'>Oh no! Going empty handed?</div>
-                <div className='text-lg text-[#D0CECE] mb-6'>Don’t compromise on your health, try a healthy cooking oil alternative today.</div>
+                <div className='text-base mt-2 text-[#D0CECE] mb-6'>Don’t compromise on your health, try a healthy cooking oil alternative today.</div>
                 <ButtonGradient title={'See Products to Try'}/>
             </div>
                 <div className='bg-[#FFFFFF] rounded-full p-5 aspect-square flex items-center justify-center'>
