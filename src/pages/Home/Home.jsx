@@ -39,6 +39,13 @@ import Faq from '../../components/Faq/Faq'
 import ButtonOutline from '../../components/Button/ButtonOutline'
 import ButtonGradient from '../../components/Button/ButtonGradient'
 import Checkout from '../../components/Checkout/Checkout'
+import Banner2 from '../../components/Banner/Banner2'
+import { productsArray } from '../../data/products'
+
+// products
+import item from './../../assets/images/item.png'
+import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
 
 const Home = () => {
 
@@ -50,7 +57,10 @@ const Home = () => {
 
   return (
     <div className='Home'>
-      <Checkout />
+
+      <Navbar/>
+
+      {/* <Checkout /> */}
 
       <Banner />
 
@@ -358,6 +368,22 @@ const Home = () => {
 
         </div>
       </section>
+
+      {/* Products */}
+      <div className='px-5 sm:px-[60px] mt-10'>
+        <div className='text-4xl font-bold mt-4'>Our products</div>
+        <div className='text-base text-[#433B39] text-lg mt-2 mb-4'>Explore through our range of cold pressed oils and get started with a healthy lifestyle today.</div>
+        <div className="grid grid-cols-3 gap-5 ">
+          {
+            productsArray?.map((i,key)=>(
+              <div className="col-span-1" key={key}>
+                <ItemCard imgBg={i.bg} name={i.name} quantity={i.quantity} price={i.price} img={item}/>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
       {/* <ItemCard/> */}
 
       <div className=" bg-[#fff] py-12">
@@ -365,12 +391,14 @@ const Home = () => {
         <div className="container px-6 m-auto">
 
           <Banner1 />
+          <Banner2/>
         </div>
 
       </div>
       <div className='mt-6 p-[100px]'>
         <Faq />
       </div>
+      <Footer/>
     </div>
   )
 }

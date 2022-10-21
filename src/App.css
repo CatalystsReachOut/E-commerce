@@ -11,3 +11,7 @@
 body {
     font-family: 'Manrope', sans-serif;
 }
+
+.gradient-2{
+    background: linear-gradient(90deg, #228B22 0%, #89C01C 100%);
+}

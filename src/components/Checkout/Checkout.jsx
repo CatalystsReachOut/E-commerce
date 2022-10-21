@@ -17,6 +17,8 @@ import ButtonGradient from '../Button/ButtonGradient'
 import { useState } from 'react'
 import ButtonOutline from '../Button/ButtonOutline'
 import Input from '../Input/Input'
+import img from './../../assets/images/item.png'
+import party from './../../assets/images/party.png'
 
 
 const Checkout = () => {
@@ -80,11 +82,11 @@ const Checkout = () => {
                                 <ModalBody>
                                     <div>
                                         <div className='lg:w-[25%] gap-[12px] w-[80%] my-4 flex justify-between items-center'>
-                                            <div className='bg-[#D8940E] text-[#FFFFFF] p-2 rounded-full aspect-square flex justify-center items-center'>
+                                            <div className='bg-[#186218] text-[#FFFFFF] p-2 rounded-full aspect-square flex justify-center items-center'>
                                                 <BsBag />
                                             </div>
                                             <div className='h-[1px] bg-[#D0CECE] w-full'></div>
-                                            <div className='p-2 rounded-full aspect-square flex justify-center items-center border border-[#726C6B] text-[#726C6B]'>
+                                            <div className='bg-[#D8940E] text-[#FFFFFF] p-2 rounded-full aspect-square flex justify-center items-center'>
                                                 <GoLocation />
                                             </div>
                                         </div>
@@ -108,9 +110,21 @@ const Checkout = () => {
                                                     />
                                                 </div>
                                                 <div className="col-span-1">
-                                                    <Input
-                                                        title={'Phone Number'}
-                                                    />
+                                                    <div>
+                                                        <label className='text-[#726C6B] text-sm' >Contact Number</label>
+                                                        <div className="grid grid-cols-8 gap-3">
+                                                            <input
+                                                                type="text"
+                                                                className='col-span-1 h-[45px] text-lg mt-1 px-2 py-1 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#228B22] focus:ring-[#228B22] block w-full rounded-md sm:text-sm focus:ring-1'
+                                                                defaultValue={'+91'}
+                                                            />
+                                                            <input
+                                                                type="text"
+                                                                className='col-span-7 h-[45px] text-lg mt-1 px-2 py-1 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#228B22] focus:ring-[#228B22] block w-full rounded-md sm:text-sm focus:ring-1'
+                                                            />
+
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div className="grid grid-cols-4 mt-5 gap-10">
@@ -148,13 +162,85 @@ const Checkout = () => {
                                         </button>
                                         <div className='flex gap-3 max-h-[50px]'>
                                             <ButtonOutline onClick={() => { setStep(1) }} title={'Back to Bag'} color={'#228B22'} textColor={'#228B22'} />
-                                            <ButtonGradient title={'Add Shipping Details'} className={'min-w-[200px]'} />
+                                            <ButtonGradient title={'Add Shipping Details'} className={'min-w-[240px] px-2'} onClick={() => { setStep(3) }} />
                                         </div>
                                     </div>
                                 </ModalFooter>
                             </ModalContent>
                             :
-                            null
+                            <ModalContent className='bg-[#FFFFFF] p-8 shadow sm:max-w-[80vw] max-w-[95vw] m-auto my-auto mt-4'>
+                                <ModalHeader className='flex justify-between'><div className='text-2xl font-bold'> Order Summary </div> <ModalCloseButton className='text-[#726C6B]' /></ModalHeader>
+
+                                <ModalBody>
+                                    <div className='mt-3'>
+                                        <div className="grid grid-cols-2">
+                                            <div className="col-span-1 flex flex-col gap-5">
+                                                <div className='flex gap-5'>
+                                                    <div className="h-[20px] w-[20px] rounded-full bg-[#0E390E] absolute translate-x-[90px] -translate-y-[10px] flex items-center justify-center text-[white] font-bold text-sm"> 1 </div>
+                                                    <div className=' w-[100px] h-[100px] rounded-sm aspect-square flex p-8 items-center justify-center bg-[#F7F5EB]'>
+                                                        <img src={img} alt="item" className='w-[50%]' />
+                                                    </div>
+                                                    <div>
+
+                                                        <div className='text-lg font-bold'>
+                                                            Cold Pressed Groundnut Oil
+                                                        </div>
+                                                        <div className='text-base'>
+                                                            250mL
+                                                        </div>
+                                                        <div className='text-xl font-extrabold'>
+                                                            ₹75.00
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className='flex gap-5'>
+                                                    <div className="h-[20px] w-[20px] rounded-full bg-[#0E390E] absolute translate-x-[90px] -translate-y-[10px] flex items-center justify-center text-[white] font-bold text-sm"> 1 </div>
+                                                    <div className=' w-[100px] h-[100px] rounded-sm aspect-square flex p-8 items-center justify-center bg-[#F7F5EB]'>
+                                                        <img src={img} alt="item" className='w-[50%]' />
+                                                    </div>
+                                                    <div>
+
+                                                        <div className='text-lg font-bold'>
+                                                            Cold Pressed Groundnut Oil
+                                                        </div>
+                                                        <div className='text-base'>
+                                                            250mL
+                                                        </div>
+                                                        <div className='text-xl font-extrabold'>
+                                                            ₹75.00
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className='mt-3 h-[50px] bg-[#FAFAFA] rounded-sm w-full flex justify-between items-center px-3'>
+                                                    <div className='text-lg text-[#726C6B]'>Total</div>
+                                                    <div className='text-[#140A08] text-xl font-bold'>
+                                                        ₹75.00
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-span-1">
+                                                <div className='gradient-2 h-[70px] w-[70px] rounded-full flex items-center justify-center'>
+                                                    <img src={party} alt="" />
+                                                </div>
+                                                <div className="mt-3 text-3xl font-bold">
+                                                    We appreciate you for taking a step towards a healthy lifestyle
+                                                </div>
+                                                <div className="mt-2 font-normal">
+                                                    Your order has been received and will be shipped shortly. <br />
+                                                    We’ll call you before delivery.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </ModalBody>
+
+                                <ModalFooter className='mt-3 '>
+                                    <div className='w-full flex justify-end'>
+                                        <ButtonGradient title={'Got it'} onClick={() => { setStep(1) }} className={' px-2'} />
+                                    </div>
+                                </ModalFooter>
+                            </ModalContent>
                 }
 
             </Modal>

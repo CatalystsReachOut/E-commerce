@@ -5,7 +5,7 @@ import ButtonOutline from '../Button/ButtonOutline'
 const ItemCard = ({imgBg, img, quantity, name, price}) => {
   return (
     <div className='w-[100%] p-4 rounded-lg bg-[#FFFFFF] flex flex-col gap-4'>
-        <div className={`aspect-square bg-[#F5ECE9] rounded-lg w-[100%] flex justify-center items-center`}>
+        <div className={`aspect-square bg-[${imgBg}] rounded-lg w-[100%] flex justify-center items-center`}>
             <img src={img} alt="Item" className='max-w-[100px] bg-transparent' />
         </div>
         <div className='description'>
@@ -23,7 +23,7 @@ const ItemCard = ({imgBg, img, quantity, name, price}) => {
             </div>
 
             <div>
-                <ButtonOutline title={"Add to Bag"} icon={<BsBag/>}/>
+                <ButtonOutline title={"Add to Bag"} color={'#228B22'} textColor={'#228B22'} icon={<BsBag/>}/>
             </div>
             
         </div>
