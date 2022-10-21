@@ -6,7 +6,7 @@ import ButtonOutline from '../Button/ButtonOutline'
 
 const Banner2 = ({className, scrollToProducts, onOpen}) => {
   return (
-    <div className={`${className} h-[250px] banner2 p-8 rounded-lg`}>
+    <div className={`${className} min-h-[250px] banner2 p-8 rounded-lg`}>
         <div className="container flex justify-between items-center h-full">
             <div className=''>
                 <div className='text-[#FFFFFF] text-5xl'>Proceed with 1 item in your bag</div>

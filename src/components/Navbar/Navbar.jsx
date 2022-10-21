@@ -4,8 +4,8 @@ import logo from './../../assets/images/logo.png'
 
 const Navbar = ({onOpen, scrollToProducts}) => {
   return (
-    <div className='Navbar bg-[#FFFFFF] p-5 sm:px-12'>
-        <div className='flex justify-between items-center px-6'>
+    <div className='Navbar bg-[#FFFFFF] p-5 sm:px-12 px-3'>
+        <div className='flex justify-between items-center sm:px-6 px-3'>
             <img src={logo} alt="logo" className='w-[100px]'/>
             <div className='flex gap-6'>
                 <button className='text-[#494949] text-base hidden sm:block' onClick={scrollToProducts}>Our Products</button>

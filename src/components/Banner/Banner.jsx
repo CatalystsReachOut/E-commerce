@@ -5,8 +5,8 @@ import ButtonGradient from '../Button/ButtonGradient'
 const Banner = ({scrollToProducts}) => {
     return (
         <div>
-            <header className="bg-[#F4F9F4] px-12 dark:bg-[#F4F9F4] min-h-screen flex flex-col justify-center">
-                <div className="container px-6 py-16 mx-auto ">
+            <header className="bg-[#F4F9F4] sm:px-12 px-3 dark:bg-[#F4F9F4] min-h-screen flex flex-col justify-center">
+                <div className="container sm:px-6 px-3 py-16 mx-auto ">
                     <div className="items-center lg:flex">
                         <div className="w-full lg:w-1/2">
                             <div className="lg:max-w-lg">

@@ -4,8 +4,8 @@ import social from './../../assets/images/instagram.png'
 
 const Footer = () => {
   return (
-    <div className='Footer bg-[#FAFAFA] p-5 sm:p-10'>
-        <div className=''>
+    <div className='Footer bg-[#FAFAFA] p-12 sm:p-10'>
+        <div className='container m-auto p-6'>
             <div className="flex justify-between items-center">
                 <img src={logo} alt="logo" />
                 <div className='flex gap-3'>
