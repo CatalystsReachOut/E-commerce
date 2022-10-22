@@ -18,6 +18,7 @@ import Thermometer from "../../assets/images/Thermometer.svg"
 import ThumbsDown from "../../assets/images/ThumbsDown.svg"
 
 import Output from "../../assets/images/Group 6356.svg"
+import output2 from "../../assets/images/banner-img2.svg"
 
 
 import Hearbeat from "../../assets/images/Heartbeat.svg"
@@ -47,6 +48,8 @@ import item from './../../assets/images/item.png'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 
+import { useDisclosure } from '@chakra-ui/react'
+import { useRef } from 'react'
 
 
 const Home = ({ cart, setCart }) => {
@@ -92,19 +95,31 @@ const Home = ({ cart, setCart }) => {
   }
 
 
+  // //refs
+  // const productRef = useRef()
+
+  // //scroll to products
+  // const scrollToProducts = () => {
+  //   productRef.current.scrollIntoView({behavior: "smooth"})
+  // }
+
+
   return (
     <div className='Home'>
 
+      {/* <Navbar onOpen={onOpen} scrollToProducts={scrollToProducts}/>
 
-      <Banner />
+      <Checkout isOpen={isOpen} onOpen={onOpen} onClose={onClose}/> */}
+
+      <Banner scrollToProducts={scrollToProducts}/>
 
       {/* SECTION 1*/}
 
-      <section className=' bg-[#fff] px-12 py-12'>
+      <section className=' bg-[#fff] sm:px-12 px-3 py-12'>
 
-        <div className='container px-6 py-6 mx-auto'>
+        <div className='container sm:px-6 px-3 py-6 mx-auto'>
           <div className=''>
-            <h2 className='text-5xl font-semibold text-[#433B39]'>Straightforward & Transparent Process</h2>
+            <h2 className='sm:text-5xl text-4xl font-semibold text-[#433B39]'>Straightforward & Transparent Process</h2>
             <p className='text-base text-[#433B39]'>We love sharing how we produce our products,
               you exactly know what you are getting into your kitchen. </p>
 
@@ -112,36 +127,38 @@ const Home = ({ cart, setCart }) => {
 
 
 
-          <div className="card-box flex justify-between py-6">
+          <div className="card-box grid sm:grid-cols-3 grid-cols-1 py-6">
 
-            <div className="card bg-white py-6 flex flex-col">
+            <div className="col-span-1 card bg-white sm:py-6 py-3 flex flex-col">
 
               <div className="flex items-center w-[100%]">
                 <div className="round p-2 w-[fit-content] flex align-center rounded-[50%] bg-[#543731]">
                   <img src={ic4} className="h-[25px]" alt="" />
                 </div>
-                <div className='h-[1px] bg-[#D0CECE] w-full'></div>
+                <div className='h-[1px] sm:block hidden bg-[#D0CECE] w-full'></div>
               </div>
               <h6 className='text-lg font-semibold  my-2'>Increased output</h6>
               <p className='w-[70%]'>During solvent extraction, addition of heat & solvents enable achieving a very high output.  </p>
+              <div className='w-[1px] h-full min-h-[100px] mx-4 mt-2 sm:hidden block bg-[#D0CECE] w-full'></div>
             </div>
 
-            <div className="card flex bg-white py-6 flex-col">
+            <div className="col-span-1 card flex bg-white sm:py-6 py-3 flex-col">
 
               <div className="flex items-center w-[100%]">
                 <div className="round p-2 flex align-center w-[fit-content] rounded-[50%] bg-[#186218]">
                   <img src={ic5} className="h-[25px]" alt="" />
                 </div>
-                <div className='h-[1px] bg-[#D0CECE] w-full'></div>
+                <div className='h-[1px] sm:block hidden bg-[#D0CECE] w-full'></div>
               </div>
 
 
               <h6 className='text-lg font-semibold my-2'>Removed color & aroma</h6>
               <p className='w-[70%]'>By bleaching process, oil looking as clear as water and without any aroma is achieved.</p>
+              <div className='w-[1px] h-full min-h-[100px] mx-4 mt-2 sm:hidden block bg-[#D0CECE] w-full'></div>
             </div>
 
 
-            <div className="card flex w-[30%] bg-white py-6 flex-col">
+            <div className="col-span-1 card flex  bg-white sm:py-6 py-3 flex-col">
 
               <div className="flex items-center w-[100%]">
                 <div className="round p-2 flex align-center w-[fit-content] rounded-[50%] bg-[#3877B2]">
@@ -164,12 +181,12 @@ const Home = ({ cart, setCart }) => {
 
       <>
         {/* component */}
-        <div className="mx-auto bg-[#186218] lg:py-16  lg:p-12">
+        <div className="mx-auto bg-[#186218] pt-6 lg:py-16  sm:p-12 px-3 pb-12 ">
 
-          <div className="container pb-12 px-6">
-            <h2 className='text-5xl font-semibold text-white w-[50%]'>Eating healthy starts with choosing
+          <div className="container pb-12 s:px-6 px-3 sm:mt-4 mt-1">
+            <h2 className='text-5xl font-semibold text-white sm:w-[50%] w-full'>Eating healthy starts with choosing
               a healthy oil to cook with.</h2>
-            <p className='text-white w-[35%] mt-5 opacity-90'>A comparison of refined oil and cold pressed oil would help you understand the key
+            <p className='text-white sm:w-[35%] w-full mt-5 opacity-90'>A comparison of refined oil and cold pressed oil would help you understand the key
               differences between the two. Make an informed decision concerning your health.</p>
           </div>
 
@@ -266,7 +283,7 @@ const Home = ({ cart, setCart }) => {
                 {/* <p className='text-[#555555]'>Degumming, Neutralization, Bleaching, Dewaxing, Deodorizing</p> */}
               </div>
 
-              <button className={`w-full p-4 text-lg px-6 font-medium tracking-wider text-white highlighted-color text-lg transition-colors duration-300 transform  rounded mt-6 lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500`}>
+              <button className={`w-full p-4 text-lg px-6 font-medium tracking-wider text-white highlighted-color text-lg transition-colors duration-300 transform  rounded mt-6 lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500`} onClick={scrollToProducts}>
                 See Available Options
               </button>
 
@@ -278,19 +295,19 @@ const Home = ({ cart, setCart }) => {
 
 
       {/* SECTION 3 */}
-      <section className='py-12 px-12 bg-[#F4F9F4]'>
+      <section className='py-12 sm:px-12 px-3 bg-[#F4F9F4]'>
 
-        <div className='container py-6 px-6 mx-auto'>
+        <div className='container py-6 sm:px-6 px-3 mx-auto'>
           <div className=''>
             <h2 className='text-5xl font-semibold text-[#433B39]'>Why is oil refined?</h2>
-            <p className='text-base text-[#433B39] opacity-80 w-[40%] mt-2'>Most large-scale commercial cooking oil refinement will involve solvent extraction in order to achieve a product with the following properties: </p>
+            <p className='text-base text-[#433B39] opacity-80 ;g:w-[40%] w-full mt-2'>Most large-scale commercial cooking oil refinement will involve solvent extraction in order to achieve a product with the following properties: </p>
 
           </div>
 
 
-          <div className="card-box flex justify-between py-6">
+          <div className="card-box flex justify-between gap-4 py-6 grid sm:grid-cols-3 grid-cols-1">
 
-            <div className="card w-[30%] bg-white p-6 flex flex-col">
+            <div className="card bg-white p-6 flex flex-col col-span-1 mb-5 h-full">
               <div className="round p-3 w-[fit-content] flex align-center justify-center rounded-[50%] bg-[#543731]">
                 <img src={ic1} className="h-[17px]" alt="" />
               </div>
@@ -298,7 +315,7 @@ const Home = ({ cart, setCart }) => {
               <p>During solvent extraction, addition of heat & solvents enable achieving a very high output.  </p>
             </div>
 
-            <div className="card flex w-[30%] bg-white p-6 flex-col">
+            <div className="card flex  bg-white p-6 flex-col col-span-1 mb-5 h-full">
               <div className="round p-2 flex align-center w-[fit-content] rounded-[50%] bg-[#186218]">
                 <img src={ic2} className="h-[20px]" alt="" />
               </div>
@@ -307,7 +324,7 @@ const Home = ({ cart, setCart }) => {
             </div>
 
 
-            <div className="card flex w-[30%] bg-white p-6 flex-col">
+            <div className="card flex bg-white p-6 flex-col col-span-1 h-full">
               <div className="round p-2 flex align-center w-[fit-content] rounded-[50%] bg-[#3877B2]">
                 <img src={ic3} className="h-[18px]" alt="" />
               </div>
@@ -325,13 +342,14 @@ const Home = ({ cart, setCart }) => {
 
       {/* SECTION 4 */}
 
-      <section className='py-12 px-12'>
-        <div className="container px-6 m-auto">
+      <section className='py-12 sm:px-12 px-3'>
+        <div className="container sm:px-6 px-3 m-auto">
           <h2 className="text-5xl mb-3 font-semibold">Output comparison</h2>
-          <p className=' opacity-80 w-[40%]'>Same quantity of seeds on refining produce 50% more oil whereas
+          <p className=' opacity-80 lg:w-[40%] w-full'>Same quantity of seeds on refining produce 50% more oil whereas
             on cold pressing, a lesser yield but 100% pure and chemical free oil is produced.</p>
 
-          <img className='w-[100%] my-12 m-auto' src={Output} alt="" />
+          <img className='w-[100%] sm:block hidden my-12 m-auto' src={Output} alt="" />
+          <img className='w-[100%] my-12 sm:hidden block m-auto' src={output2} alt="" />
         </div>
 
       </section>
@@ -339,14 +357,14 @@ const Home = ({ cart, setCart }) => {
 
       {/* SECTION 5 */}
 
-      <section className='py-12 px-12 bg-[#F4F9F4] overflow-hidden'>
-        <div className="container px-6 m-auto">
-          <h2 className="text-5xl mb-3 font-semibold w-[50%]">Never compromise on the
+      <section className='py-12 sm:px-12 px-3 bg-[#F4F9F4] overflow-hidden'>
+        <div className="container sm:px-6 px-3 m-auto">
+          <h2 className="text-5xl mb-3 font-semibold">Never compromise on the
             quality of what you cook with</h2>
-          <p className=' opacity-80 w-[40%]'>Experience purity of the oil in all forms. 100% natural & chemical free.</p>
+          <p className=' opacity-80'>Experience purity of the oil in all forms. 100% natural & chemical free.</p>
 
-          <div className='flex mt-6'>
-            <div class="py-4 w-[60%]">
+          <div className='grid grid-cols-10 gap-4 mt-6'>
+            <div class="py-4 sm:col-span-6 col-span-10">
               <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
                 <div class="overflow-hidden rounded bg-white p-4 lg:p-12">
                   <div class="flex flex-col ">
@@ -394,9 +412,9 @@ const Home = ({ cart, setCart }) => {
               </div>
             </div>
 
-            <div className="w-[40%] flex relative ">
-              <img src={Hand} alt="" className='bottom-[-4.5rem] right-[-4.5rem] absolute w-[110%] z-10  right ' />
-              <img src={Subtract} className=' right-[-4.5rem] bottom-[-4.5rem] absolute w-[50%] z-100' alt="" />
+            <div className="sm:col-span-4 col-span-10 flex relative ">
+              <img src={Hand} alt="" className='bottom-[-4.5rem] right-[-4.5rem] sm:absolute sm:w-[110%] w-[550px] z-10  right ' />
+              <img src={Subtract} className=' right-[-4.5rem] bottom-[-4.5rem] sm:block hidden sm:absolute w-[50%] z-100' alt="" />
             </div>
           </div>
 
@@ -404,6 +422,7 @@ const Home = ({ cart, setCart }) => {
       </section>
 
       {/* Products */}
+<<<<<<< HEAD
       <div className='p-12  bg-[#FAFAFA]'>
         <div className="container px-6  mx-auto">
           <div className='text-4xl font-bold mt-4'>Our products</div>
@@ -417,22 +436,48 @@ const Home = ({ cart, setCart }) => {
               ))
             }
           </div>
+=======
+      <div className='sm:p-12 px-3 mt-6  bg-[#FAFAFA]' ref={productRef}>
+        <div className="container sm:px-6 px-3  mx-auto">
+        <div className='text-4xl font-bold mt-4'>Our products</div>
+        <div className='text-base text-[#433B39] text-lg mt-2 mb-4'>Explore through our range of cold pressed oils and get started with a healthy lifestyle today.</div>
+        <div className="grid sm:grid-cols-3 grid-cols-1 gap-5 ">
+          {
+            productsArray?.map((i,key)=>(
+              <div className="col-span-1" key={key}>
+                <ItemCard imgBg={i.bg} name={i.name} quantity={i.quantity} price={i.price} img={item}/>
+              </div>
+            ))
+          }
+        </div>
+>>>>>>> 8529cb5b1bdd111eaaf19f4574e01ddd0514b338
         </div>
       </div>
 
       {/* <ItemCard/> */}
 
+<<<<<<< HEAD
       <div className=" bg-[#fff] p-12">
+=======
+      <div className="bg-[#fff] sm:p-12 p-3">
+>>>>>>> 8529cb5b1bdd111eaaf19f4574e01ddd0514b338
 
-        <div className="container px-6 m-auto">
+        <div className="container sm:px-6 px-3 m-auto">
 
+<<<<<<< HEAD
           <Banner1 />
           <Banner2 />
+=======
+          <Banner1 scrollToProducts={scrollToProducts}/>
+          <Banner2 scrollToProducts={scrollToProducts} onOpen={onOpen}/>
+>>>>>>> 8529cb5b1bdd111eaaf19f4574e01ddd0514b338
         </div>
 
       </div>
-      <div className='mt-6 p-[100px]'>
-        <Faq />
+      <div className='mt-6 sm:p-12 px-3 py-10'>
+        <div className="container sm:p-6 p-3 m-auto">
+          <Faq />
+        </div>
       </div>
       <Footer />
     </div>

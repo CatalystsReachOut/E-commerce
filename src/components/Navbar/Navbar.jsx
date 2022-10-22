@@ -2,13 +2,13 @@ import React from 'react'
 import { BsBag } from 'react-icons/bs'
 import logo from './../../assets/images/logo.png'
 
-const Navbar = ({onOpen, cartCount}) => {
+const Navbar = ({onOpen, scrollToProducts,  cartCount}) => {
   return (
-    <div className='Navbar bg-[#FFFFFF] sm:p-5 p-3'>
-        <div className='flex justify-between items-center'>
+    <div className='Navbar bg-[#FFFFFF] p-5 sm:px-12 px-3'>
+        <div className='flex justify-between items-center sm:px-6 px-3'>
             <img src={logo} alt="logo" className='w-[100px]'/>
             <div className='flex gap-6'>
-                <button className='text-[#494949] text-base hidden sm:block'>Our Products</button>
+                <button className='text-[#494949] text-base hidden sm:block' onClick={scrollToProducts}>Our Products</button>
                 <button className='text-base text-[#228B22] gap-1 flex items-center' onClick={onOpen}>
                      Your Bag 
                      <div>
