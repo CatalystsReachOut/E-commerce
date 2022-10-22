@@ -47,9 +47,9 @@ import item from './../../assets/images/item.png'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 
-import { useDisclosure } from '@chakra-ui/react'
 
-const Home = () => {
+
+const Home = ({ cart, setCart }) => {
 
   const navigate = useNavigate()
 
@@ -57,14 +57,44 @@ const Home = () => {
     navigate(dir)
   }
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const handleProduct = (e, product) => {
+    e.preventDefault();
+
+
+
+    let cartData = cart?.find(item => item.id == product.id);
+
+
+
+    if (cartData) {
+      setCart(prev => {
+        const newState = prev?.map(data => {
+          if (data.id == cartData.id) {
+            return { ...data, count: data.count + 1 }
+          }
+          return data
+        }
+        )
+
+        return newState;
+      })
+    } else {
+      setCart(prev => [...prev, {
+        id: product.id,
+        name: product.name,
+        count: 1,
+        quantity: product.quantity,
+        price: product.price,
+        image: product.image
+      }])
+    }
+
+  }
+
 
   return (
     <div className='Home'>
 
-      <Navbar onOpen={onOpen}/>
-
-      <Checkout isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
 
       <Banner />
 
@@ -376,17 +406,17 @@ const Home = () => {
       {/* Products */}
       <div className='p-12  bg-[#FAFAFA]'>
         <div className="container px-6  mx-auto">
-        <div className='text-4xl font-bold mt-4'>Our products</div>
-        <div className='text-base text-[#433B39] text-lg mt-2 mb-4'>Explore through our range of cold pressed oils and get started with a healthy lifestyle today.</div>
-        <div className="grid grid-cols-3 gap-5 ">
-          {
-            productsArray?.map((i,key)=>(
-              <div className="col-span-1" key={key}>
-                <ItemCard imgBg={i.bg} name={i.name} quantity={i.quantity} price={i.price} img={item}/>
-              </div>
-            ))
-          }
-        </div>
+          <div className='text-4xl font-bold mt-4'>Our products</div>
+          <div className='text-base text-[#433B39] text-lg mt-2 mb-4'>Explore through our range of cold pressed oils and get started with a healthy lifestyle today.</div>
+          <div className="grid grid-cols-3 gap-5 ">
+            {
+              productsArray?.map((i, key) => (
+                <div className="col-span-1" key={key}>
+                  <ItemCard imgBg={i.bg} name={i.name} onClick={(e) => handleProduct(e, i)} quantity={i.quantity} price={i.price} img={i.image} />
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
 
@@ -397,14 +427,14 @@ const Home = () => {
         <div className="container px-6 m-auto">
 
           <Banner1 />
-          <Banner2/>
+          <Banner2 />
         </div>
 
       </div>
       <div className='mt-6 p-[100px]'>
         <Faq />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

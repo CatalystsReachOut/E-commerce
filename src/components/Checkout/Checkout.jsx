@@ -20,9 +20,53 @@ import img from './../../assets/images/item.png'
 import party from './../../assets/images/party.png'
 
 
-const Checkout = ({isOpen, onOpen, onClose}) => {
-    
+const Checkout = ({ isOpen, onOpen, onClose, cart, setCart }) => {
+
     const [step, setStep] = useState(1)
+
+    const [sum, setSum] = useState(() => {
+        let s = 0
+
+        cart.map(data => {
+            s += data.count * parseFloat(data.price)
+        })
+
+        return s
+    })
+
+    const addQuantity = (id) => {
+        console.log(id)
+
+        setCart(prev => {
+            const newState = prev?.map(data => {
+                if (data.id == id) {
+                    return { ...data, count: data.count + 1 }
+                }
+                return data
+            }
+            )
+
+            return newState;
+        })
+
+    }
+
+    const removeQuantity = (id) => {
+        setCart(prev => {
+            const newState = prev?.map(data => {
+                if (data.id == id) {
+                    if (data.count == 1) {
+                        return
+                    }
+                    return { ...data, count: data.count - 1 }
+                }
+                return data
+            })
+
+            return newState;
+        })
+    }
+
     return (
         <>
 
@@ -46,14 +90,18 @@ const Checkout = ({isOpen, onOpen, onClose}) => {
                                         </div>
                                     </div>
                                     <div className='mt-6 border p-4 rounded-lg shadow'>
-                                        <CheckoutItems />
-                                        <CheckoutItems />
+
+                                        {cart && cart.map((data, key) => {
+                                            return <CheckoutItems addQuantity={addQuantity} removeQuantity={removeQuantity} item={data} />
+
+                                        })}
+
                                         <div className="mt-5 h-[60px] bg-[#FAFAFA] flex justify-between items-center px-3">
                                             <div className='text-[#726C6B] text-lg'>
                                                 Total
                                             </div>
                                             <div className='font-bold text-2xl'>
-                                                ₹140.00
+                                                ₹ {sum}
                                             </div>
 
                                         </div>
