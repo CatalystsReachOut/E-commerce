@@ -95,13 +95,13 @@ const Home = ({ cart, setCart }) => {
   }
 
 
-  // //refs
-  // const productRef = useRef()
+  //refs
+  const productRef = useRef()
 
-  // //scroll to products
-  // const scrollToProducts = () => {
-  //   productRef.current.scrollIntoView({behavior: "smooth"})
-  // }
+  //scroll to products
+  const scrollToProducts = () => {
+    productRef.current.scrollIntoView({behavior: "smooth"})
+  }
 
 
   return (
@@ -422,8 +422,7 @@ const Home = ({ cart, setCart }) => {
       </section>
 
       {/* Products */}
-<<<<<<< HEAD
-      <div className='p-12  bg-[#FAFAFA]'>
+      <div className='p-12  bg-[#FAFAFA]' ref={productRef}>
         <div className="container px-6  mx-auto">
           <div className='text-4xl font-bold mt-4'>Our products</div>
           <div className='text-base text-[#433B39] text-lg mt-2 mb-4'>Explore through our range of cold pressed oils and get started with a healthy lifestyle today.</div>
@@ -436,41 +435,18 @@ const Home = ({ cart, setCart }) => {
               ))
             }
           </div>
-=======
-      <div className='sm:p-12 px-3 mt-6  bg-[#FAFAFA]' ref={productRef}>
-        <div className="container sm:px-6 px-3  mx-auto">
-        <div className='text-4xl font-bold mt-4'>Our products</div>
-        <div className='text-base text-[#433B39] text-lg mt-2 mb-4'>Explore through our range of cold pressed oils and get started with a healthy lifestyle today.</div>
-        <div className="grid sm:grid-cols-3 grid-cols-1 gap-5 ">
-          {
-            productsArray?.map((i,key)=>(
-              <div className="col-span-1" key={key}>
-                <ItemCard imgBg={i.bg} name={i.name} quantity={i.quantity} price={i.price} img={item}/>
-              </div>
-            ))
-          }
-        </div>
->>>>>>> 8529cb5b1bdd111eaaf19f4574e01ddd0514b338
+
         </div>
       </div>
 
       {/* <ItemCard/> */}
 
-<<<<<<< HEAD
-      <div className=" bg-[#fff] p-12">
-=======
       <div className="bg-[#fff] sm:p-12 p-3">
->>>>>>> 8529cb5b1bdd111eaaf19f4574e01ddd0514b338
 
         <div className="container sm:px-6 px-3 m-auto">
 
-<<<<<<< HEAD
-          <Banner1 />
-          <Banner2 />
-=======
           <Banner1 scrollToProducts={scrollToProducts}/>
-          <Banner2 scrollToProducts={scrollToProducts} onOpen={onOpen}/>
->>>>>>> 8529cb5b1bdd111eaaf19f4574e01ddd0514b338
+          <Banner2 scrollToProducts={scrollToProducts} />
         </div>
 
       </div>
