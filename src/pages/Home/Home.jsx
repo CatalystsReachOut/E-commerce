@@ -93,36 +93,38 @@ const Home = () => {
 
 
 
-          <div className="card-box flex justify-between py-6">
+          <div className="card-box grid sm:grid-cols-3 grid-cols-1 py-6">
 
-            <div className="card bg-white py-6 flex flex-col">
+            <div className="col-span-1 card bg-white sm:py-6 py-3 flex flex-col">
 
               <div className="flex items-center w-[100%]">
                 <div className="round p-2 w-[fit-content] flex align-center rounded-[50%] bg-[#543731]">
                   <img src={ic4} className="h-[25px]" alt="" />
                 </div>
-                <div className='h-[1px] bg-[#D0CECE] w-full'></div>
+                <div className='h-[1px] sm:block hidden bg-[#D0CECE] w-full'></div>
               </div>
               <h6 className='text-lg font-semibold  my-2'>Increased output</h6>
               <p className='w-[70%]'>During solvent extraction, addition of heat & solvents enable achieving a very high output.  </p>
+              <div className='w-[1px] h-full min-h-[100px] mx-4 mt-2 sm:hidden block bg-[#D0CECE] w-full'></div>
             </div>
 
-            <div className="card flex bg-white py-6 flex-col">
+            <div className="col-span-1 card flex bg-white sm:py-6 py-3 flex-col">
 
               <div className="flex items-center w-[100%]">
                 <div className="round p-2 flex align-center w-[fit-content] rounded-[50%] bg-[#186218]">
                   <img src={ic5} className="h-[25px]" alt="" />
                 </div>
-                <div className='h-[1px] bg-[#D0CECE] w-full'></div>
+                <div className='h-[1px] sm:block hidden bg-[#D0CECE] w-full'></div>
               </div>
 
 
               <h6 className='text-lg font-semibold my-2'>Removed color & aroma</h6>
               <p className='w-[70%]'>By bleaching process, oil looking as clear as water and without any aroma is achieved.</p>
+              <div className='w-[1px] h-full min-h-[100px] mx-4 mt-2 sm:hidden block bg-[#D0CECE] w-full'></div>
             </div>
 
 
-            <div className="card flex w-[30%] bg-white py-6 flex-col">
+            <div className="col-span-1 card flex  bg-white sm:py-6 py-3 flex-col">
 
               <div className="flex items-center w-[100%]">
                 <div className="round p-2 flex align-center w-[fit-content] rounded-[50%] bg-[#3877B2]">
@@ -269,9 +271,9 @@ const Home = () => {
           </div>
 
 
-          <div className="card-box flex justify-between py-6 grid sm:grid-col-3 grid-cols-1">
+          <div className="card-box flex justify-between gap-4 py-6 grid sm:grid-cols-3 grid-cols-1">
 
-            <div className="card bg-white p-6 flex flex-col col-span-1 mb-5">
+            <div className="card bg-white p-6 flex flex-col col-span-1 mb-5 h-full">
               <div className="round p-3 w-[fit-content] flex align-center justify-center rounded-[50%] bg-[#543731]">
                 <img src={ic1} className="h-[17px]" alt="" />
               </div>
@@ -279,7 +281,7 @@ const Home = () => {
               <p>During solvent extraction, addition of heat & solvents enable achieving a very high output.  </p>
             </div>
 
-            <div className="card flex  bg-white p-6 flex-col col-span-1 mb-5">
+            <div className="card flex  bg-white p-6 flex-col col-span-1 mb-5 h-full">
               <div className="round p-2 flex align-center w-[fit-content] rounded-[50%] bg-[#186218]">
                 <img src={ic2} className="h-[20px]" alt="" />
               </div>
@@ -288,7 +290,7 @@ const Home = () => {
             </div>
 
 
-            <div className="card flex bg-white p-6 flex-col col-span-1">
+            <div className="card flex bg-white p-6 flex-col col-span-1 h-full">
               <div className="round p-2 flex align-center w-[fit-content] rounded-[50%] bg-[#3877B2]">
                 <img src={ic3} className="h-[18px]" alt="" />
               </div>

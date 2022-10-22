@@ -15,3 +15,7 @@ body {
 .gradient-2{
     background: linear-gradient(90deg, #228B22 0%, #89C01C 100%);
 }
+
+.chakra-modal__content-container{
+    min-height: 90vh;
+}

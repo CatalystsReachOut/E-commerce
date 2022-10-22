@@ -6,7 +6,7 @@ import ButtonGradient from '../Button/ButtonGradient'
 const Banner1 = ({className, scrollToProducts}) => {
   return (
     <div className={`${className} min-h-[250px] banner1 p-8 rounded-lg`}>
-        <div className="container flex justify-between items-center h-full">
+        <div className="container flex sm:flex-nowrap flex-wrap-reverse gap-5 justify-between items-center h-full">
             <div className=''>
                 <div className='text-[#FFFFFF] text-5xl'>Oh no! Going empty handed?</div>
                 <div className='text-base mt-2 text-[#D0CECE] mb-6'>Don’t compromise on your health, try a healthy cooking oil alternative today.</div>
