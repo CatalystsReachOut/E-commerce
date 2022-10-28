@@ -11,24 +11,24 @@ import {
 import {AiOutlinePlus, AiOutlineMinus} from 'react-icons/ai'
 const Accordian = () => {
   return (
-    <div className=' min-h-[200px]'>
+    <div className='min-h-[200px]'>
       <Accordion className={`rounded-xl`}>
         <AccordionItem className=''>
           {({isExpanded})=>(
-            <div className={`${isExpanded?'bg-[#F4F9F4]':''} p-6 rounded-lg`}>
+            <div className={`${isExpanded?'bg-[#F4F9F4]':''} p-[24px] rounded-[8px]`}>
           <h2>
-            <AccordionButton className='mb-5 font-bold text-lg'>
+            <AccordionButton className='mb-5 text-Medium+/Title/xSmall text-[#262626]'>
               <Box flex='1' textAlign='left'>
               Is cold pressed oil healthier?
               </Box>
               {isExpanded ? (
-              <AiOutlineMinus fontSize='12px' className='text-[#228B22]' />
+              <AiOutlineMinus fontSize='16px' fontWeight={600} className='text-[#228B22]' />
             ) : (
-              <AiOutlinePlus fontSize='12px' className='text-[#228B22]' />
+              <AiOutlinePlus fontSize='16px' fontWeight={600} className='text-[#228B22]' />
             )}
             </AccordionButton>
           </h2>
-          <AccordionPanel className='text-[#494949]'>
+          <AccordionPanel className='text-[#494949] text-Medium+/Paragraph/Medium'>
           Cold pressed oil does not contain any chemicals and is pressed without heating the seeds to extreme temperature. These oils retain the original aroma of the oil seed, they maintain the nutritional value from the original seed and hence are healthier.
           </AccordionPanel>
           </div>
@@ -36,62 +36,64 @@ const Accordian = () => {
         </AccordionItem>
         <AccordionItem className=''>
           {({isExpanded})=>(
-            <div className={`${isExpanded?'bg-[#F4F9F4]':''} p-6 rounded-lg`}>
+            <div className={`${isExpanded?'bg-[#F4F9F4]':''} p-[24px] rounded-[8px]`}>
           <h2>
-            <AccordionButton className='mb-5 font-bold text-lg'>
+            <AccordionButton className='mb-5 text-Medium+/Title/xSmall text-[#262626]'>
               <Box flex='1' textAlign='left'>
               Is cold pressed oil healthier?
               </Box>
               {isExpanded ? (
-              <AiOutlineMinus fontSize='12px' className='text-[#228B22]' />
+              <AiOutlineMinus fontSize='16px' fontWeight={600} className='text-[#228B22]' />
             ) : (
-              <AiOutlinePlus fontSize='12px' className='text-[#228B22]' />
+              <AiOutlinePlus fontSize='16px' fontWeight={600} className='text-[#228B22]' />
             )}
             </AccordionButton>
           </h2>
-          <AccordionPanel className='text-[#494949]'>
+          <AccordionPanel className='text-[#494949] text-Medium+/Paragraph/Medium'>
           Cold pressed oil does not contain any chemicals and is pressed without heating the seeds to extreme temperature. These oils retain the original aroma of the oil seed, they maintain the nutritional value from the original seed and hence are healthier.
           </AccordionPanel>
           </div>
           )}
         </AccordionItem>
+
         <AccordionItem className=''>
           {({isExpanded})=>(
-            <div className={`${isExpanded?'bg-[#F4F9F4]':''} p-6 rounded-lg`}>
+            <div className={`${isExpanded?'bg-[#F4F9F4]':''} p-[24px] rounded-[8px]`}>
           <h2>
-            <AccordionButton className='mb-5 font-bold text-lg'>
+            <AccordionButton className='mb-5 text-Medium+/Title/xSmall text-[#262626]'>
               <Box flex='1' textAlign='left'>
               Is cold pressed oil healthier?
               </Box>
               {isExpanded ? (
-              <AiOutlineMinus fontSize='12px' className='text-[#228B22]' />
+              <AiOutlineMinus fontSize='16px' fontWeight={600} className='text-[#228B22]' />
             ) : (
-              <AiOutlinePlus fontSize='12px' className='text-[#228B22]' />
+              <AiOutlinePlus fontSize='16px' fontWeight={600} className='text-[#228B22]' />
             )}
             </AccordionButton>
           </h2>
-          <AccordionPanel className='text-[#494949]'>
+          <AccordionPanel className='text-[#494949] text-Medium+/Paragraph/Medium'>
           Cold pressed oil does not contain any chemicals and is pressed without heating the seeds to extreme temperature. These oils retain the original aroma of the oil seed, they maintain the nutritional value from the original seed and hence are healthier.
           </AccordionPanel>
           </div>
           )}
         </AccordionItem>
+
         <AccordionItem className=''>
           {({isExpanded})=>(
-            <div className={`${isExpanded?'bg-[#F4F9F4]':''} p-6 rounded-lg`}>
+            <div className={`${isExpanded?'bg-[#F4F9F4]':''} p-[24px] rounded-[8px]`}>
           <h2>
-            <AccordionButton className='mb-5 font-bold text-lg'>
+            <AccordionButton className='mb-5 text-Medium+/Title/xSmall text-[#262626]'>
               <Box flex='1' textAlign='left'>
               Is cold pressed oil healthier?
               </Box>
               {isExpanded ? (
-              <AiOutlineMinus fontSize='12px' className='text-[#228B22]' />
+              <AiOutlineMinus fontSize='16px' fontWeight={600} className='text-[#228B22]' />
             ) : (
-              <AiOutlinePlus fontSize='12px' className='text-[#228B22]' />
+              <AiOutlinePlus fontSize='16px' fontWeight={600} fon className='text-[#228B22]' />
             )}
             </AccordionButton>
           </h2>
-          <AccordionPanel className='text-[#494949]'>
+          <AccordionPanel className='text-[#494949] text-Medium+/Paragraph/Medium'>
           Cold pressed oil does not contain any chemicals and is pressed without heating the seeds to extreme temperature. These oils retain the original aroma of the oil seed, they maintain the nutritional value from the original seed and hence are healthier.
           </AccordionPanel>
           </div>

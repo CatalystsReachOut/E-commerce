@@ -1,3 +1,32 @@
+/* @font-face {
+    font-family: Manrope;
+    font-weight: 400;
+    src: url("./assets/fonts/Manrope-Regular.ttf") format("truetype"),
+        
+}
+
+
+@font-face {
+    font-family: Manrope;
+    font-weight: 700;
+    src: url("./assets/fonts/Manrope-Bold.ttf") format("truetype"),
+        
+}
+
+@font-face {
+    font-family: Manrope;
+    font-weight: 600;
+    src: url("./assets/fonts/Manrope-SemiBold.ttf") format("truetype"),
+        
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
 .banner-txt {
     background: -webkit-linear-gradient(90deg, #2A9428 0%, #89C22D 100%);
     -webkit-background-clip: text;
@@ -8,14 +37,68 @@
     background: linear-gradient(90deg, #228B22 0%, #89C01C 100%);
 }
 
-body {
-    font-family: 'Manrope', sans-serif;
-}
 
-.gradient-2{
+.gradient-2 {
     background: linear-gradient(90deg, #228B22 0%, #89C01C 100%);
 }
 
-.chakra-modal__content-container{
+.chakra-modal__content-container {
     min-height: 90vh;
+}
+
+.grad-btn:hover{
+        background: #228B22 !important;
+}
+
+.scrollbarNew::-webkit-scrollbar {
+    /* margin-left: 20px;
+    padding-left: 20px; */
+    width: 14px;
+    /* position: absolute; */
+    /* margin-inline-start: 10px; */
+}
+
+
+.scrollbarNew::-webkit-scrollbar-thumb {
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 9999px;
+    background-color: #AAAAAA;
+}
+
+
+.scrollbarNew::-webkit-scrollbar-track {
+    /* margin-block-start : 20px; */
+    /* margin-inline-start: 30px;
+    margin-left: 20px;
+    padding-inline: 10px; */
+
+}
+
+
+.add_bag svg{
+    fill: #228B22;    
+}
+
+.add_bag:hover{
+    background: linear-gradient(90deg, #228B22 0%, #89C01C 100%);
+    color: white;
+    border-color: transparent;
+}
+
+.add_bag:hover svg{
+    /* background: linear-gradient(90deg, #228B22 0%, #89C01C 100%); */
+    fill: white;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

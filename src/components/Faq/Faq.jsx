@@ -6,10 +6,10 @@ const Faq = () => {
     <div className='FAQ'>
         <div className="grid sm:grid-cols-2 grid-cols-1">
             <div className="col-span-1">
-                <div className='text-5xl font-semibold mb-6'>
+                <div className='text-Medium+/Title/xLarge text-Neutral80'>
                     Frequently <br /> Asked Questions
                 </div>
-                <div className='text-lg text-[#433B39] text-lg'>
+                <div className='text-Medium+/Paragraph/Large mt-[20px] text-Neutral70'>
                     Everything you need to know about the Parampara Cold Pressed Oil. 
                 </div>
             </div>

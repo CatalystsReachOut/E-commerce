@@ -2,7 +2,7 @@ import React from 'react'
 
 const ButtonOutline = ({className, title, onClick, icon}) => {
   return (
-    <button onClick={onClick} className={`border-2 border-[#228B22] bg-transparent text-[#228B22] text-base p-4 w-[100%] rounded-lg flex justify-center gap-2 items-center ${className}`}>
+    <button onClick={onClick} className={`border-[1px] border-Primary80 Medium+/Label/Large-Strong py-[16px] px-[24px]  w-[fit-content] rounded-[8px] rounded-lg flex justify-center gap-2 items-center ${className}`}>
      {icon} {title}
     </button>
   )

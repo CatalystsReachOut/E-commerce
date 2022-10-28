@@ -1,27 +1,27 @@
 import React from 'react'
-import img1 from "../../assets/images/bannerimg.png"
+import img1 from "../../assets/images/Hero.svg"
 import ButtonGradient from '../Button/ButtonGradient'
 
-const Banner = ({scrollToProducts}) => {
+const Banner = ({ scrollToProducts }) => {
     return (
         <div>
-            <header className="bg-[#F4F9F4] sm:px-12 px-3 dark:bg-[#F4F9F4] min-h-screen flex flex-col justify-center">
-                <div className="container sm:px-6 px-3 py-16 mx-auto ">
+            <header className="bg-Primary10 dark:bg-[#F4F9F4] py-[195px] flex flex-col">
+                <div className="container  mx-auto ">
                     <div className="items-center lg:flex">
                         <div className="w-full lg:w-1/2">
                             <div className="lg:max-w-lg">
-                                <h2 className="text-5xl  banner-txt font-semibold text-gray-800 dark:text-white lg:text-5xl"><span className="">Cold Pressed Oil </span>
+                                <h2 className="text-Medium+/Title/xxLarge text-black"><span className="banner-txt  whitespace-nowrap">Cold Pressed Oil </span> <br /> made like the olden times
                                 </h2>
-                                <h2 className='text-black font-semibold lg:text-5xl font-medium'>made like the olden times</h2>
-                                <p className="mt-4 text-[#433B39] dark:text-[#433B39]">We press seeds in wooden machines to extract pure edible oil.
+
+                                <p className="text-Medium+/Paragraph/Large text-Neutral70 mt-[8px]">We press seeds in wooden machines to extract pure edible oil.
                                     It’s exactly like the olden times, just replaced animals with motors.</p>
-                                <div className="flex flex-col mt-8 space-y-3 lg:space-y-0 lg:flex-row">
-                                    <ButtonGradient onClick={scrollToProducts} title={"See products"}/>
+                                <div className="flex flex-col mt-[24px] ">
+                                    <ButtonGradient  onClick={scrollToProducts} title={"See Products"} />
                                 </div>
                             </div>
                         </div>
                         <div className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
-                            <img className="w-full h-full max-w-md" src={img1} alt="email illustration vector art" />
+                            <img className="w-[95%] " src={img1} alt="email illustration vector art" />
                         </div>
                     </div>
                 </div>

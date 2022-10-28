@@ -1,19 +1,19 @@
 import React from 'react'
-import { BsBag } from 'react-icons/bs'
-import logo from './../../assets/images/logo.png'
+import logo from './../../assets/images/LogoHorizontal.svg'
+import Bag from "../../assets/images/bag.svg"
 
 const Navbar = ({onOpen, scrollToProducts,  cartCount}) => {
   return (
-    <div className='Navbar bg-[#FFFFFF] p-5 sm:px-12 px-3'>
-        <div className='flex justify-between items-center sm:px-6 px-3'>
-            <img src={logo} alt="logo" className='w-[100px]'/>
+    <div className='Navbar sticky top-0 z-50 border-b-[1px] border-Neutral40 bg-[#FFFFFF] py-[28px]  '>
+        <div className='flex container m-auto justify-between items-center  '>
+            <img src={logo} alt="logo" className='h-[40px]'/>
             <div className='flex gap-6'>
-                <button className='text-[#494949] text-base hidden sm:block' onClick={scrollToProducts}>Our Products</button>
-                <button className='text-base text-[#228B22] gap-1 flex items-center' onClick={onOpen}>
+                <button className='text-Medium+/Label/Medium text-[#494949]' onClick={scrollToProducts}>Browse Products</button>
+                <button className='text-Medium+/Label/Medium-Strong text-Primary60 ml-[56px] flex items-center' onClick={onOpen}>
                      Your Bag 
-                     <div>
-                        <div className="absolute h-[18px] w-[18px] bg-[#000000] flex items-center justify-center rounded-full text-[#FFFFFF] p-1 text-sm translate-x-[10px] -translate-y-[10px]">{cartCount}</div>
-                        <BsBag/>
+                     <div className='ml-[10px]'>
+                        <div className="absolute h-[20px] w-[20px] bg-Primary80 flex items-center justify-center rounded-full Medium+/Paragraph/xSmall-Strong text-Neutral10  text-sm translate-x-[12px] -translate-y-[7px]">{cartCount}</div>
+                        <img src={Bag} alt="" />
                      </div>
                 </button>
             </div>
