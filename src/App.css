@@ -20,6 +20,25 @@
         
 } */
 
+@media only screen and (max-device-width: 599px) and (orientation:portrait) {
+
+    .container {
+        padding: 0 20px !important;
+    }
+
+
+    .chakra-modal__content-container {
+        min-height: 10vh !important;
+        bottom: 0;
+        top: auto !important;
+        max-height: 90vh;
+        overflow: scroll;
+    }
+
+
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 
@@ -46,8 +65,8 @@ body {
     min-height: 90vh;
 }
 
-.grad-btn:hover{
-        background: #228B22 !important;
+.grad-btn:hover {
+    background: #228B22 !important;
 }
 
 .scrollbarNew::-webkit-scrollbar {
@@ -76,17 +95,18 @@ body {
 }
 
 
-.add_bag svg{
-    fill: #228B22;    
+.add_bag svg {
+    fill: #228B22;
 }
 
-.add_bag:hover{
+.add_bag:hover {
     background: linear-gradient(90deg, #228B22 0%, #89C01C 100%);
     color: white;
     border-color: transparent;
+    /* border: 0px; */
 }
 
-.add_bag:hover svg{
+.add_bag:hover svg {
     /* background: linear-gradient(90deg, #228B22 0%, #89C01C 100%); */
     fill: white;
 }
@@ -94,11 +114,11 @@ body {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }

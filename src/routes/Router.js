@@ -38,29 +38,33 @@ const Router = () => {
 
 
   const delay = ms => new Promise(res => setTimeout(res, ms));
-  const [toast, setToast] = useState(false)
+  const [toast, setToast] = useState({
+    state: false,
+    text: ''
+  })
 
 
-  const addProduct = async () => {
-    setToast(true)
+  const addProduct = async (text) => {
+    setToast(prev => ({ ...prev, text: text, state: true }))
     await delay(1500);
-    setToast(false)
+    setToast(prev => ({ ...prev, state: false }))
+
   }
 
-  const RouteWithRole = ({toast, Element, addProduct }) => {
+  const RouteWithRole = ({ toast, Element, addProduct }) => {
 
     return (
       <>
         <>{
-          toast ?
-            <div className={`fixed h-[100vh] w-[100vw] flex z-[60]`}>
-              <div className='animate-bounce w-[fit-content] z-[60] p-[16px] bg-[#222222] rounded-[8px] mx-auto bottom-[50px] mt-auto relative text-[#fff] text-Medium+/Paragraph/Medium'>Product added successfully</div>
+          toast?.state ?
+            <div className={`fixed h-[100vh] w-[100vw] p-[20px] flex z-[60]`}>
+              <div className='animate-fade w-[fit-content] z-[60] p-[16px] bg-[#222222] rounded-[8px] mx-auto bottom-[50px] mt-auto relative text-[#fff] text-Small/Paragraph/Medium md:text-Medium+/Paragraph/Medium'>{toast?.text}</div>
             </div>
             : null
         }</>
 
         <Navbar scrollToProducts={scrollToProducts} cartCount={cartCount} onOpen={onOpen} />
-        <Checkout cart={cart} setCart={setCart} isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+        <Checkout cart={cart} setCart={setCart} scrollToProducts={scrollToProducts} isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
         <Element setCart={setCart} addProduct={addProduct} cartCount={cartCount} cart={cart} onOpen={onOpen} productRef={productRef} scrollToProducts={scrollToProducts} />
       </>
     );
